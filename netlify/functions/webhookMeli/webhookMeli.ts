@@ -1,7 +1,7 @@
 import { Handler } from '@netlify/functions'
 
 export const handler: Handler = async (event, context) => {
-  const { name = 'stranger' } = event.body
+  const name = event.body?.length == 0 ?  'stranger' : event.body
 
   console.log("A la grande le puse cucas");
   console.log(event.body);
